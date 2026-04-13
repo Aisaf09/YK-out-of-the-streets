@@ -239,6 +239,37 @@
       opacity: 0;
       animation: fadeUp 0.8s var(--ease-out) 0.9s forwards;
     }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 1.2s forwards;
+    }
+    .scroll-indicator span {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+      50%      { opacity: 1;   transform: scaleY(1); }
+    }
+
     /* ============================================
        CTA BUTTON (REUSABLE)
     ============================================ */
@@ -686,7 +717,7 @@
   ============================================ -->
   <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
     <div class="container nav-inner">
-      <a href="#" class="nav-brand">Visionary <span>Kaira</span></a>
+      <a href="#" class="nav-brand">YK <span>Out of the streets</span></a>
       <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20más%20información%20sobre%20la%20mentoría" class="nav-cta" target="_blank" rel="noopener">Contactar</a>
     </div>
   </nav>
