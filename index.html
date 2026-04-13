@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YK out of the streets — Transforma Tu Vida con Disciplina Real</title>
+  <meta name="description" content="Mentoría personalizada para eliminar distracciones, construir disciplina real y tomar el control de tu vida. Sistema probado de transformación personal.">
+  <meta name="keywords" content="mentoría, disciplina, enfoque, transformación personal, coaching, desarrollo personal">
+  <meta property="og:title" content="YK out of the streets — Transforma Tu Vida">
+  <meta property="og:description" content="Sistema de mentoría personalizada para construir disciplina real y tomar el control de tu vida.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       CSS RESET & VARIABLES
+    ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #0a0a0a;
+      --charcoal: #141414;
+      --dark-gray: #1a1a1a;
+      --medium-gray: #2a2a2a;
+      --text-muted: #6b6b6b;
+      --text-secondary: #999999;
+      --text-primary: #e8e8e8;
+      --white: #f5f5f5;
+      --accent: #c8a44e;
+      --accent-light: #dfc06e;
+      --accent-glow: rgba(200, 164, 78, 0.15);
+      --accent-glow-strong: rgba(200, 164, 78, 0.3);
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ============================================
+       SCROLL REVEAL ANIMATIONS
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================
+       UTILITY
+    ============================================ */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    /* Divider line */
+    .section-divider {
+      width: 60px;
+      height: 2px;
+      background: var(--accent);
+      margin: 0 auto 48px;
+      opacity: 0.6;
+    }
+
+    /* ============================================
+       NAVIGATION
+    ============================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.4s var(--ease-smooth);
+      background: transparent;
+    }
+    .nav.scrolled {
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(200, 164, 78, 0.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 3px;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+    .nav-brand span {
+      color: var(--accent);
+    }
+    .nav-cta {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(200, 164, 78, 0.4);
+      padding: 10px 20px;
+      border-radius: 2px;
+      transition: all 0.3s var(--ease-smooth);
+    }
+    .nav-cta:hover {
+      background: var(--accent);
+      color: var(--black);
+    }
+
+    /* ============================================
+       1. HERO SECTION
+    ============================================ */
+    .hero {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 120px 0 80px;
+      overflow: hidden;
+    }
+
+    /* Atmospheric background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200, 164, 78, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 80% at 80% 50%, rgba(200, 164, 78, 0.03) 0%, transparent 50%),
+        linear-gradient(180deg, var(--black) 0%, var(--charcoal) 50%, var(--black) 100%);
+      z-index: 0;
+    }
+
+    /* Noise texture overlay */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.3s forwards;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 10vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.5s forwards;
+    }
+    .hero-title .accent {
+      color: var(--accent);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.7s forwards;
+    }
+
+    .hero-cta-wrap {
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.9s forwards;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 1.2s forwards;
+    }
+    .scroll-indicator span {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+      50%      { opacity: 1;   transform: scaleY(1); }
+    }
+
+    /* ============================================
+       CTA BUTTON (REUSABLE)
+    ============================================ */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--accent);
+      padding: 18px 40px;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s var(--ease-smooth);
+    }
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(200, 164, 78, 0.25);
+    }
+    .cta-btn:hover::before { opacity: 1; }
+    .cta-btn span { position: relative; z-index: 1; }
+    .cta-btn svg { position: relative; z-index: 1; width: 18px; height: 18px; }
+    .cta-btn:active { transform: translateY(0); }
+
+    .cta-btn--outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .cta-btn--outline:hover {
+      background: var(--accent);
+      color: var(--black);
+    }
+
+    /* ============================================
+       2. PROBLEM SECTION
+    ============================================ */
+    .problem {
+      background: var(--black);
+      text-align: center;
+      padding: 120px 0;
+    }
+
+    .problem-text {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1.15;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .problem-text .highlight {
+      color: var(--white);
+      display: block;
+    }
+    .problem-text .dim {
+      color: var(--text-muted);
+    }
+
+    .problem-sub {
+      margin-top: 32px;
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    /* ============================================
+       3. SOLUTION SECTION
+    ============================================ */
+    .solution {
+      background: var(--charcoal);
+      position: relative;
+    }
+    .solution::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.2;
+    }
+
+    .solution-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .solution-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .solution-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.1;
+      color: var(--white);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 600px;
+      margin: 0 auto 56px;
+    }
+
+    .feature-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 28px;
+      background: var(--dark-gray);
+      border: 1px solid var(--medium-gray);
+      border-radius: 4px;
+      transition: all 0.4s var(--ease-smooth);
+    }
+    .feature-card:hover {
+      border-color: rgba(200, 164, 78, 0.3);
+      background: rgba(200, 164, 78, 0.04);
+      transform: translateX(4px);
+    }
+
+    .feature-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-glow);
+      border-radius: 4px;
+    }
+    .feature-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--accent);
+    }
+
+    .feature-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .solution-cta {
+      text-align: center;
+    }
+
+    /* ============================================
+       4. STORY SECTION
+    ============================================ */
+    .story {
+      background: var(--black);
+      padding: 120px 0;
+    }
+
+    .story-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Gold vertical bar */
+    .story-inner::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      border-radius: 2px;
+    }
+
+    .story-content {
+      padding-left: 36px;
+    }
+
+    .story-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    .story-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .story-body {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .story-signature {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 28px;
+      letter-spacing: 1px;
+    }
+
+    /* ============================================
+       5. RESULTS SECTION
+    ============================================ */
+    .results {
+      background: var(--charcoal);
+      text-align: center;
+      padding: 120px 0;
+      position: relative;
+    }
+    .results::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 50%, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .results-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 40px;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .result-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .result-icon {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(200, 164, 78, 0.2);
+      border-radius: 50%;
+      margin-bottom: 4px;
+      transition: all 0.4s var(--ease-smooth);
+    }
+    .result-item:hover .result-icon {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+      transform: scale(1.1);
+    }
+    .result-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--accent);
+    }
+
+    .result-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+    .result-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+      max-width: 280px;
+    }
+
+    /* ============================================
+       6. FINAL CTA SECTION
+    ============================================ */
+    .final-cta {
+      background: var(--black);
+      text-align: center;
+      padding: 120px 0 140px;
+      position: relative;
+    }
+
+    .final-cta-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+      line-height: 1.2;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 12px;
+    }
+    .final-cta-text .white {
+      color: var(--white);
+      display: block;
+      margin-top: 8px;
+    }
+
+    .final-cta-sub {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+      margin-bottom: 48px;
+      font-style: italic;
+    }
+
+    .final-cta .cta-btn {
+      font-size: 0.95rem;
+      padding: 22px 52px;
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--dark-gray);
+      text-align: center;
+    }
+    .footer-text {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+    .footer-text a {
+      color: var(--accent);
+      transition: opacity 0.3s;
+    }
+    .footer-text a:hover { opacity: 0.7; }
+
+    /* ============================================
+       FLOATING WHATSAPP BUTTON
+    ============================================ */
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+      transition: all 0.3s var(--ease-smooth);
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
+    .wa-float.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+    }
+    .wa-float svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+    }
+
+    /* ============================================
+       RESPONSIVE — TABLET+
+    ============================================ */
+    @media (min-width: 768px) {
+      .features {
+        max-width: 700px;
+      }
+
+      .results-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+      }
+
+      .hero-title {
+        letter-spacing: 4px;
+      }
+
+      section { padding: 140px 0; }
+    }
+
+    @media (min-width: 1024px) {
+      .container { padding: 0 48px; }
+
+      .feature-card { padding: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+  ============================================ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand">YK <span>Out of the streets</span></a>
+      <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20más%20información%20sobre%20la%20mentoría" class="nav-cta" target="_blank" rel="noopener">Contactar</a>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       1. HERO SECTION
+  ============================================ -->
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <p class="hero-eyebrow">Mentoría de Transformación Personal</p>
+      <h1 class="hero-title">
+        Deja de Sobrevivir.
+        <span class="accent">Empieza a Dominar.</span>
+      </h1>
+      <p class="hero-sub">
+        Un sistema diseñado para personas que están cansadas de excusas y quieren construir una vida con propósito, disciplina y resultados reales.
+      </p>
+      <div class="hero-cta-wrap">
+        <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20más%20información%20sobre%20la%20mentoría" class="cta-btn" target="_blank" rel="noopener">
+          <span>Quiero más información</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       2. PROBLEM SECTION
+  ============================================ -->
+  <section class="problem" id="problema">
+    <div class="container">
+      <div class="section-divider reveal"></div>
+      <div class="problem-text reveal reveal-delay-1">
+        <span class="highlight">Estás perdiendo tiempo.</span>
+        Sin enfoque. Sin dirección.<br>
+        <span class="dim">Rodeado de distracciones.</span>
+      </div>
+      <p class="problem-sub reveal reveal-delay-2">
+        Y en el fondo, lo sabes.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       3. SOLUTION SECTION
+  ============================================ -->
+  <section class="solution" id="solucion">
+    <div class="container">
+      <div class="solution-header">
+        <p class="solution-label reveal">La Solución</p>
+        <h2 class="solution-title reveal reveal-delay-1">
+          Hemos creado un sistema para ayudarte a enfocarte, eliminar distracciones y construir disciplina real.
+        </h2>
+      </div>
+
+      <div class="features">
+        <!-- Feature 1 -->
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <h3 class="feature-name">Mentoría 1:1</h3>
+            <p class="feature-desc">Sesiones individuales contigo. Sin grupos. Sin distracciones. Enfocado en tus objetivos concretos.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div>
+            <h3 class="feature-name">Plan Personalizado</h3>
+            <p class="feature-desc">No es un curso genérico. Es un plan diseñado para tu situación, tus retos y tu ritmo de vida.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <h3 class="feature-name">Seguimiento Directo</h3>
+            <p class="feature-desc">Acceso directo para resolver dudas, rendir cuentas y mantener el impulso cada semana.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-cta reveal reveal-delay-4">
+        <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20más%20información%20sobre%20la%20mentoría" class="cta-btn" target="_blank" rel="noopener">
+          <span>Quiero más información</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       4. STORY SECTION
+  ============================================ -->
+  <section class="story" id="historia">
+    <div class="container">
+      <div class="story-inner reveal">
+        <div class="story-content">
+          <p class="story-label">Mi Historia</p>
+          <h2 class="story-quote">
+            Yo estuve ahí.<br>
+            Perdido. Sin rumbo.
+          </h2>
+          <p class="story-body">
+            Hubo un momento en mi vida donde no tenía claridad. Me levantaba sin propósito, pasaba los días dejándome llevar, y sentía que el tiempo se me escapaba de las manos.
+          </p>
+          <p class="story-body">
+            Hasta que decidí cambiar. No fue fácil. Pero encontré un sistema, me rodeé de las personas correctas, y construí los hábitos que hoy me permiten vivir con intención.
+          </p>
+          <p class="story-body">
+            Ahora, mi misión es ayudarte a ti a hacer lo mismo.
+          </p>
+          <p class="story-signature">— Kaira</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       5. RESULTS SECTION
+  ============================================ -->
+  <section class="results" id="resultados">
+    <div class="container">
+      <p class="results-label reveal">Lo Que Vas a Conseguir</p>
+
+      <div class="results-grid">
+        <div class="result-item reveal reveal-delay-1">
+          <div class="result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 class="result-title">Más Enfoque</h3>
+          <p class="result-desc">Claridad mental para saber exactamente qué hacer cada día.</p>
+        </div>
+
+        <div class="result-item reveal reveal-delay-2">
+          <div class="result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="result-title">Más Disciplina</h3>
+          <p class="result-desc">Hábitos sólidos que se mantienen incluso cuando la motivación falla.</p>
+        </div>
+
+        <div class="result-item reveal reveal-delay-3">
+          <div class="result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3 class="result-title">Más Control</h3>
+          <p class="result-desc">Tú decides cómo vives. Sin que las circunstancias te controlen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6. FINAL CTA SECTION
+  ============================================ -->
+  <section class="final-cta" id="contacto">
+    <div class="container">
+      <div class="section-divider reveal"></div>
+      <div class="final-cta-text reveal reveal-delay-1">
+        Si quieres seguir igual, no hagas nada.
+        <span class="white">Si quieres cambiar, escríbeme.</span>
+      </div>
+      <p class="final-cta-sub reveal reveal-delay-2">
+        El primer paso siempre es el más difícil. Pero el más importante.
+      </p>
+      <div class="reveal reveal-delay-3">
+        <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20más%20información%20sobre%20la%20mentoría" class="cta-btn" target="_blank" rel="noopener">
+          <span>Hablar por WhatsApp</span>
+          <!-- WhatsApp icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        &copy; 2026 YK out of the streets. Todos los derechos reservados.
+        &nbsp;&middot;&nbsp;
+        <a href="https://www.instagram.com/ykoutthestreets/" target="_blank" rel="noopener">@ykoutthestreets</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       FLOATING WHATSAPP BUTTON
+  ============================================ -->
+  <a href="https://wa.me/34600000000?text=Hola%2C%20quiero%20más%20información%20sobre%20la%20mentoría" class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ============================================
+       JAVASCRIPT — Scroll Reveals & Nav
+  ============================================ -->
+  <script>
+    // === Scroll Reveal with IntersectionObserver ===
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // === Nav background on scroll ===
+    const nav = document.getElementById('nav');
+    let lastScroll = 0;
+    const onScroll = () => {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 60);
+      lastScroll = y;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // === Floating WhatsApp button visibility ===
+    const waFloat = document.getElementById('waFloat');
+    const waObserver = new IntersectionObserver((entries) => {
+      // Show floating button once user scrolls past hero
+      entries.forEach(entry => {
+        waFloat.classList.toggle('visible', !entry.isIntersecting);
+      });
+    }, { threshold: 0.3 });
+    waObserver.observe(document.getElementById('hero'));
+  </script>
+
+</body>
+</html>
