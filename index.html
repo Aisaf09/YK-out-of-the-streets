@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visionary Kaira — Transforma Tu Vida con Disciplina Real</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Mentoría personalizada para eliminar distracciones, construir disciplina real y tomar el control de tu vida. Sistema probado de transformación personal.">
+  <meta name="keywords" content="mentoría, disciplina, enfoque, transformación personal, coaching, desarrollo personal">
+  <meta property="og:title" content="Visionary Kaira — Transforma Tu Vida">
+  <meta property="og:description" content="Sistema de mentoría personalizada para construir disciplina real y tomar el control de tu vida.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       CSS RESET & VARIABLES
+    ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #0a0a0a;
+      --charcoal: #111111;
+      --dark-gray: #1a1a1a;
+      --medium-gray: #2a2a2a;
+      --text-muted: #5a5a5a;
+      --text-secondary: #999999;
+      --text-primary: #e8e8e8;
+      --white: #f5f5f5;
+      --accent: #c8a44e;
+      --accent-light: #dfc06e;
+      --accent-glow: rgba(200, 164, 78, 0.12);
+      --accent-glow-strong: rgba(200, 164, 78, 0.25);
+      --error: #e74c3c;
+      --success: #2ecc71;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ============================================
+       SCROLL REVEAL ANIMATIONS
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================
+       UTILITY
+    ============================================ */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .section-divider {
+      width: 50px;
+      height: 2px;
+      background: var(--accent);
+      margin: 0 auto 40px;
+      opacity: 0.5;
+    }
+
+    /* ============================================
+       NAVIGATION
+    ============================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: all 0.4s var(--ease-smooth);
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .nav.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(200, 164, 78, 0.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      color: var(--white);
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .nav-brand span { color: var(--accent); }
+
+    /* Desktop links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.3s var(--ease-smooth);
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links .nav-cta-link {
+      color: var(--accent);
+      border: 1px solid rgba(200, 164, 78, 0.4);
+      padding: 8px 18px;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .nav-links .nav-cta-link::after { display: none; }
+    .nav-links .nav-cta-link:hover {
+      background: var(--accent);
+      color: var(--black);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1001;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s var(--ease-smooth);
+      transform-origin: center;
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile overlay */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s var(--ease-smooth);
+    }
+    .mobile-nav.open {
+      display: flex;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .mobile-nav a {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+    }
+    .mobile-nav a:hover { color: var(--accent); }
+    .mobile-nav .mobile-cta {
+      color: var(--black);
+      background: var(--accent);
+      padding: 14px 36px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    /* ============================================
+       1. HERO SECTION
+    ============================================ */
+    .hero {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 100px 0 60px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200, 164, 78, 0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 80% at 80% 50%, rgba(200, 164, 78, 0.03) 0%, transparent 50%),
+        linear-gradient(180deg, var(--black) 0%, var(--charcoal) 50%, var(--black) 100%);
+      z-index: 0;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.02;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 760px;
+      padding: 0 8px;
+    }
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.3s forwards;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 9vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      color: var(--white);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.5s forwards;
+    }
+    .hero-title .accent { color: var(--accent); display: block; }
+    .hero-sub {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.7s forwards;
+    }
+    .hero-cta-wrap {
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease-out) 0.9s forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================
+       CTA BUTTON (REUSABLE)
+    ============================================ */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--accent);
+      padding: 16px 36px;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s var(--ease-smooth);
+    }
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(200, 164, 78, 0.25);
+    }
+    .cta-btn:hover::before { opacity: 1; }
+    .cta-btn span, .cta-btn svg { position: relative; z-index: 1; }
+    .cta-btn svg { width: 16px; height: 16px; }
+    .cta-btn:active { transform: translateY(0); }
+
+    /* ============================================
+       2. PROBLEM SECTION
+    ============================================ */
+    .problem {
+      background: var(--black);
+      text-align: center;
+      padding: 100px 0;
+    }
+    .problem-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5.5vw, 3.8rem);
+      line-height: 1.15;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .problem-text .highlight { color: var(--white); display: block; }
+    .problem-text .dim { color: var(--text-muted); }
+    .problem-sub {
+      margin-top: 28px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    /* ============================================
+       3. SOLUTION SECTION
+    ============================================ */
+    .solution { background: var(--charcoal); position: relative; }
+    .solution::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.15;
+    }
+    .solution-header { text-align: center; margin-bottom: 56px; }
+    .solution-label {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 20px;
+    }
+    .solution-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+      line-height: 1.1; color: var(--white);
+      max-width: 600px; margin: 0 auto;
+    }
+    .features {
+      display: grid; grid-template-columns: 1fr;
+      gap: 16px; max-width: 560px; margin: 0 auto 48px;
+    }
+    .feature-card {
+      display: flex; align-items: flex-start;
+      gap: 16px; padding: 24px;
+      background: var(--dark-gray);
+      border: 1px solid var(--medium-gray);
+      border-radius: 4px;
+      transition: all 0.4s var(--ease-smooth);
+    }
+    .feature-card:hover {
+      border-color: rgba(200, 164, 78, 0.3);
+      background: rgba(200, 164, 78, 0.04);
+    }
+    .feature-icon {
+      flex-shrink: 0; width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--accent-glow); border-radius: 4px;
+    }
+    .feature-icon svg { width: 20px; height: 20px; color: var(--accent); }
+    .feature-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem; letter-spacing: 1px;
+      color: var(--white); margin-bottom: 4px;
+    }
+    .feature-desc {
+      font-size: 0.85rem; color: var(--text-secondary);
+      font-weight: 300; line-height: 1.6;
+    }
+    .solution-cta { text-align: center; }
+
+    /* ============================================
+       4. STORY SECTION
+    ============================================ */
+    .story { background: var(--black); padding: 100px 0; }
+    .story-inner {
+      max-width: 560px; margin: 0 auto; position: relative;
+    }
+    .story-inner::before {
+      content: ''; position: absolute;
+      left: 0; top: 0; width: 3px; height: 100%;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      border-radius: 2px;
+    }
+    .story-content { padding-left: 28px; }
+    .story-label {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 24px;
+    }
+    .story-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      line-height: 1.2; color: var(--white); margin-bottom: 20px;
+    }
+    .story-body {
+      font-size: 0.95rem; color: var(--text-secondary);
+      font-weight: 300; line-height: 1.8; margin-bottom: 14px;
+    }
+    .story-signature {
+      font-size: 0.85rem; color: var(--accent);
+      font-weight: 500; margin-top: 24px; letter-spacing: 1px;
+    }
+
+    /* ============================================
+       5. RESULTS SECTION
+    ============================================ */
+    .results {
+      background: var(--charcoal); text-align: center;
+      padding: 100px 0; position: relative;
+    }
+    .results::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 50%, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .results-label {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 36px;
+    }
+    .results-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: 36px; max-width: 700px; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .result-item {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 10px;
+    }
+    .result-icon {
+      width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(200, 164, 78, 0.2);
+      border-radius: 50%; margin-bottom: 4px;
+      transition: all 0.4s var(--ease-smooth);
+    }
+    .result-item:hover .result-icon {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+      transform: scale(1.08);
+    }
+    .result-icon svg { width: 22px; height: 22px; color: var(--accent); }
+    .result-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem; letter-spacing: 1px; color: var(--white);
+    }
+    .result-desc {
+      font-size: 0.85rem; color: var(--text-secondary);
+      font-weight: 300; max-width: 260px;
+    }
+
+    /* ============================================
+       6. CONTACT FORM SECTION
+    ============================================ */
+    .contact { background: var(--black); padding: 100px 0 120px; }
+    .contact-inner {
+      max-width: 540px; margin: 0 auto; text-align: center;
+    }
+    .contact-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4.5vw, 2.6rem);
+      line-height: 1.2; color: var(--text-muted); margin-bottom: 8px;
+    }
+    .contact-text .white { color: var(--white); display: block; margin-top: 6px; }
+    .contact-sub {
+      font-size: 0.95rem; color: var(--text-secondary);
+      font-weight: 300; margin-bottom: 48px; font-style: italic;
+    }
+
+    /* Form styles */
+    .contact-form { text-align: left; }
+    .form-group { margin-bottom: 20px; }
+    .form-label {
+      display: block; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--text-secondary); margin-bottom: 8px;
+    }
+    .form-input, .form-textarea {
+      width: 100%; font-family: var(--font-body);
+      font-size: 0.95rem; color: var(--white);
+      background: var(--dark-gray);
+      border: 1px solid var(--medium-gray);
+      border-radius: 4px; padding: 14px 16px;
+      outline: none;
+      transition: border-color 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+      -webkit-appearance: none;
+    }
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: var(--text-muted); font-weight: 300;
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .form-submit-wrap { text-align: center; margin-top: 32px; }
+    .form-submit {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-body); font-size: 0.85rem;
+      font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--black);
+      background: var(--accent); padding: 18px 44px;
+      border: none; border-radius: 2px; cursor: pointer;
+      transition: all 0.4s var(--ease-smooth);
+      width: 100%; justify-content: center;
+    }
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(200, 164, 78, 0.25);
+      background: var(--accent-light);
+    }
+    .form-submit:active { transform: translateY(0); }
+    .form-submit:disabled {
+      opacity: 0.6; cursor: not-allowed;
+      transform: none; box-shadow: none;
+    }
+    .form-submit svg { width: 16px; height: 16px; }
+    .form-status {
+      text-align: center; margin-top: 20px;
+      font-size: 0.9rem; font-weight: 500;
+      opacity: 0; transition: opacity 0.4s;
+    }
+    .form-status.show { opacity: 1; }
+    .form-status.success { color: var(--success); }
+    .form-status.error { color: var(--error); }
+    .email-direct {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 24px; font-size: 0.82rem;
+      color: var(--text-muted); transition: color 0.3s;
+    }
+    .email-direct:hover { color: var(--accent); }
+    .email-direct svg { width: 14px; height: 14px; color: var(--accent); }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--dark-gray);
+      text-align: center;
+    }
+    .footer-text {
+      font-size: 0.72rem; color: var(--text-muted); letter-spacing: 1px;
+    }
+    .footer-text a { color: var(--accent); transition: opacity 0.3s; }
+    .footer-text a:hover { opacity: 0.7; }
+
+    /* ============================================
+       FLOATING EMAIL BUTTON
+    ============================================ */
+    .email-float {
+      position: fixed; bottom: 20px; right: 20px;
+      z-index: 998; width: 52px; height: 52px;
+      background: var(--accent); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(200, 164, 78, 0.3);
+      transition: all 0.3s var(--ease-smooth);
+      opacity: 0; transform: scale(0.8); pointer-events: none;
+    }
+    .email-float.visible {
+      opacity: 1; transform: scale(1); pointer-events: auto;
+    }
+    .email-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 28px rgba(200, 164, 78, 0.45);
+    }
+    .email-float svg { width: 22px; height: 22px; color: var(--black); }
+
+    /* ============================================
+       RESPONSIVE — MOBILE
+    ============================================ */
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .container { padding: 0 16px; }
+      section { padding: 64px 0; }
+      .hero { padding: 90px 0 50px; }
+      .hero-eyebrow { letter-spacing: 3px; margin-bottom: 20px; }
+      .hero-sub { margin-bottom: 32px; }
+      .cta-btn { padding: 15px 28px; font-size: 0.78rem; width: 100%; justify-content: center; }
+      .problem { padding: 80px 0; }
+      .feature-card { padding: 20px; gap: 14px; }
+      .feature-icon { width: 36px; height: 36px; }
+      .feature-icon svg { width: 18px; height: 18px; }
+      .story-content { padding-left: 22px; }
+      .results-grid { gap: 28px; }
+      .contact { padding: 80px 0 100px; }
+      .form-submit { padding: 16px 32px; }
+    }
+
+    /* ============================================
+       RESPONSIVE — TABLET+
+    ============================================ */
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .container { padding: 0 32px; }
+      section { padding: 120px 0; }
+      .form-row { grid-template-columns: 1fr 1fr; }
+      .results-grid { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+      .form-submit { width: auto; }
+    }
+
+    @media (min-width: 1024px) {
+      .container { padding: 0 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+  ============================================ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-brand">Visionary <span>Kaira</span></a>
+      <ul class="nav-links">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#problema">El Problema</a></li>
+        <li><a href="#solucion">Solución</a></li>
+        <li><a href="#historia">Mi Historia</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#contacto" class="nav-cta-link">Contactar</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#hero" class="mobile-nav-link">Inicio</a>
+    <a href="#problema" class="mobile-nav-link">El Problema</a>
+    <a href="#solucion" class="mobile-nav-link">Solución</a>
+    <a href="#historia" class="mobile-nav-link">Mi Historia</a>
+    <a href="#resultados" class="mobile-nav-link">Resultados</a>
+    <a href="#contacto" class="mobile-nav-link mobile-cta">Contactar</a>
+  </div>
+
+  <!-- ============================================
+       1. HERO
+  ============================================ -->
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <p class="hero-eyebrow">Mentoría de Transformación Personal</p>
+      <h1 class="hero-title">
+        Deja de Sobrevivir.
+        <span class="accent">Empieza a Dominar.</span>
+      </h1>
+      <p class="hero-sub">
+        Un sistema diseñado para personas que están cansadas de excusas y quieren construir una vida con propósito, disciplina y resultados reales.
+      </p>
+      <div class="hero-cta-wrap">
+        <a href="#contacto" class="cta-btn">
+          <span>Quiero más información</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       2. PROBLEM
+  ============================================ -->
+  <section class="problem" id="problema">
+    <div class="container">
+      <div class="section-divider reveal"></div>
+      <div class="problem-text reveal reveal-delay-1">
+        <span class="highlight">Estás perdiendo tiempo.</span>
+        Sin enfoque. Sin dirección.<br>
+        <span class="dim">Rodeado de distracciones.</span>
+      </div>
+      <p class="problem-sub reveal reveal-delay-2">Y en el fondo, lo sabes.</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       3. SOLUTION
+  ============================================ -->
+  <section class="solution" id="solucion">
+    <div class="container">
+      <div class="solution-header">
+        <p class="solution-label reveal">La Solución</p>
+        <h2 class="solution-title reveal reveal-delay-1">
+          Hemos creado un sistema para ayudarte a enfocarte, eliminar distracciones y construir disciplina real.
+        </h2>
+      </div>
+      <div class="features">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <h3 class="feature-name">Mentoría 1:1</h3>
+            <p class="feature-desc">Sesiones individuales contigo. Sin grupos. Sin distracciones. Enfocado en tus objetivos concretos.</p>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div>
+            <h3 class="feature-name">Plan Personalizado</h3>
+            <p class="feature-desc">No es un curso genérico. Es un plan diseñado para tu situación, tus retos y tu ritmo de vida.</p>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <h3 class="feature-name">Seguimiento Directo</h3>
+            <p class="feature-desc">Acceso directo para resolver dudas, rendir cuentas y mantener el impulso cada semana.</p>
+          </div>
+        </div>
+      </div>
+      <div class="solution-cta reveal reveal-delay-4">
+        <a href="#contacto" class="cta-btn">
+          <span>Quiero más información</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       4. STORY
+  ============================================ -->
+  <section class="story" id="historia">
+    <div class="container">
+      <div class="story-inner reveal">
+        <div class="story-content">
+          <p class="story-label">Mi Historia</p>
+          <h2 class="story-quote">Yo estuve ahí.<br>Perdido. Sin rumbo.</h2>
+          <p class="story-body">Hubo un momento en mi vida donde no tenía claridad. Me levantaba sin propósito, pasaba los días dejándome llevar, y sentía que el tiempo se me escapaba de las manos.</p>
+          <p class="story-body">Hasta que decidí cambiar. No fue fácil. Pero encontré un sistema, me rodeé de las personas correctas, y construí los hábitos que hoy me permiten vivir con intención.</p>
+          <p class="story-body">Ahora, mi misión es ayudarte a ti a hacer lo mismo.</p>
+          <p class="story-signature">— Kaira</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       5. RESULTS
+  ============================================ -->
+  <section class="results" id="resultados">
+    <div class="container">
+      <p class="results-label reveal">Lo Que Vas a Conseguir</p>
+      <div class="results-grid">
+        <div class="result-item reveal reveal-delay-1">
+          <div class="result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 class="result-title">Más Enfoque</h3>
+          <p class="result-desc">Claridad mental para saber exactamente qué hacer cada día.</p>
+        </div>
+        <div class="result-item reveal reveal-delay-2">
+          <div class="result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="result-title">Más Disciplina</h3>
+          <p class="result-desc">Hábitos sólidos que se mantienen incluso cuando la motivación falla.</p>
+        </div>
+        <div class="result-item reveal reveal-delay-3">
+          <div class="result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3 class="result-title">Más Control</h3>
+          <p class="result-desc">Tú decides cómo vives. Sin que las circunstancias te controlen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6. CONTACT FORM
+  ============================================ -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="section-divider reveal"></div>
+        <div class="contact-text reveal reveal-delay-1">
+          Si quieres seguir igual, no hagas nada.
+          <span class="white">Si quieres cambiar, escríbeme.</span>
+        </div>
+        <p class="contact-sub reveal reveal-delay-2">Rellena el formulario y te respondo personalmente via email.</p>
+
+        <div class="contact-form reveal reveal-delay-3" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="nombre">Nombre</label>
+              <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="telefono">Teléfono <span style="color:var(--text-muted);font-weight:300;text-transform:none;letter-spacing:0">(opcional)</span></label>
+            <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="mensaje">¿En qué puedo ayudarte?</label>
+            <textarea class="form-textarea" id="mensaje" name="mensaje" placeholder="Cuéntame tu situación y qué quieres cambiar..." required></textarea>
+          </div>
+          <div class="form-submit-wrap">
+            <button type="button" class="form-submit" id="submitBtn">
+              <span>Enviar Mensaje</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+          <div class="form-status" id="formStatus"></div>
+          <div style="text-align:center">
+            <a href="mailto:streetsyk@gmail.com?subject=Quiero%20más%20información%20-%20Visionary%20Kaira" class="email-direct">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              O escríbeme directamente a streetsyk@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        &copy; 2026 Visionary Kaira. Todos los derechos reservados.
+        &nbsp;&middot;&nbsp;
+        <a href="https://www.instagram.com/ykoutthestreets/" target="_blank" rel="noopener">@ykoutthestreets</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       FLOATING EMAIL BUTTON
+  ============================================ -->
+    <a href="mailto:streetsyk@gmail.com" class="email-float" id="emailFloat" aria-label="Enviar un correo electrónico">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+    </svg>
+</a>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script>
+    // === Scroll Reveal ===
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // === Nav scroll ===
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    // === Hamburger ===
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // === Floating button ===
+    const emailFloat = document.getElementById('emailFloat');
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => emailFloat.classList.toggle('visible', !e.isIntersecting));
+    }, { threshold: 0.25 }).observe(document.getElementById('hero'));
+
+    // === Form → mailto ===
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+      const status = document.getElementById('formStatus');
+
+      if (!nombre || !email || !mensaje) {
+        status.textContent = 'Por favor, rellena los campos obligatorios.';
+        status.className = 'form-status show error';
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        status.textContent = 'Por favor, introduce un email válido.';
+        status.className = 'form-status show error';
+        return;
+      }
+
+      const subject = encodeURIComponent('Quiero más información - Visionary Kaira');
+      const body = encodeURIComponent(
+        `Hola Kaira,\n\nMi nombre es ${nombre}.\n` +
+        (telefono ? `Mi teléfono: ${telefono}\n` : '') +
+        `Mi email: ${email}\n\nMensaje:\n${mensaje}\n\n---\nEnviado desde la web de Visionary Kaira`
+      );
+      window.location.href = `mailto:streetsyk@gmail.com?subject=${subject}&body=${body}`;
+
+      status.textContent = '¡Se ha abierto tu app de correo! Envía el mensaje para contactarme.';
+      status.className = 'form-status show success';
+
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      setTimeout(() => btn.disabled = false, 3000);
+    });
+  </script>
+</body>
+</html>
